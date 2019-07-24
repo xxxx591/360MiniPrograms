@@ -2,7 +2,7 @@
 const store = new Vuex.Store({
   state: {
     hasUserInfo: false,
-    userInfo: {}
+    userInfo: {},
   },
   mutations: {
     update(state, payload) {
@@ -11,64 +11,79 @@ const store = new Vuex.Store({
   }
 })
 const Home = Vue.extend({
-  template:document.querySelector('#tpl-home').innerHTML,
-  data(){
-    return{
-      list:[
+  template: document.querySelector('#tpl-home').innerHTML,
+  data() {
+    return {
+      list: [
         {
-          imgUrl:'http://h5.gc-app.com/91cnki/images/pmlc.jpg',
-          title:'本科PMLC',
-          price:'100',
-          introduction:"专科、本科毕业论文定稿",
-          href:""
+          imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
+          title: '本科PMLC',
+          price: '100',
+          introduction: "专科、本科毕业论文定稿",
+          href: "http://h5.gc-app.com/91cnki/check/pmlc.html"
         },
         {
-          imgUrl:'http://h5.gc-app.com/91cnki/images/pmlc.jpg',
-          title:'硕博VIP5.1',
-          price:'100',
-          introduction:"硕士、博士毕业论文定稿"
+          imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
+          title: '硕博VIP5.1',
+          price: '101',
+          introduction: "硕士、博士毕业论文定稿",
+          href:"http://h5.gc-app.com/91cnki/check/vip.html"
         },
         {
-          imgUrl:'http://h5.gc-app.com/91cnki/images/pmlc.jpg',
-          title:'期刊AMLC',
-          price:'100',
-          introduction:"发表期刊查重初稿"
+          imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
+          title: '期刊AMLC',
+          price: '102',
+          introduction: "发表期刊查重初稿",
+          href:"http://h5.gc-app.com/91cnki/check/qikan.html"
         },
         {
-          imgUrl:'http://h5.gc-app.com/91cnki/images/pmlc.jpg',
-          title:'大分解',
-          price:'100',
-          introduction:"发表论文查重初稿"
+          imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
+          title: '大分解',
+          price: '103',
+          introduction: "发表论文查重初稿",
+          href:"http://h5.gc-app.com/91cnki/check/dafenjie.html"
         },
         {
-          imgUrl:'http://h5.gc-app.com/91cnki/images/pmlc.jpg',
-          title:'小分解',
-          price:'100',
-          introduction:"高校毕业论文初查必备"
+          imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
+          title: '小分解',
+          price: '104',
+          introduction: "高校毕业论文初查必备",
+          href:"http://h5.gc-app.com/91cnki/check/xiaofenjie.html"
         },
         {
-          imgUrl:'http://h5.gc-app.com/91cnki/images/pmlc.jpg',
-          title:'查看更多',
-          price:'100',
-          introduction:"查询更多品牌点这里(#^.^#)"
+          imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
+          title: '查看更多',
+          price: '666',
+          introduction: "查询更多品牌点这里(#^.^#)",
+          href:"http://h5.gc-app.com/91cnki"
         },
-      ]
+      ],
+      hrefUrl:'',
+      price:'100',
+      title:'本科PMLC'
     }
   },
-
+  methods:{
+    selectItem(item){
+      console.log('item',item);
+      this.title = item.title;
+      this.price = item.price;
+      this.hrefUrl = item.href
+    }
+  }
 })
 // 定义 (路由) 组件。
 const Index = Vue.extend({
   template: document.querySelector('#tpl-index').innerHTML,
   data() {
     return {
-      
+
     }
   },
   computed: {
     ...Vuex.mapState(['userInfo', 'hasUserInfo'])
   },
-  created() {},
+  created() { },
   methods: {
     getUserInfo() {
       // 授权

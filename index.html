@@ -16,22 +16,42 @@
   </div>
   <template id="tpl-home">
     <div class="home-index">
-        <h3 class="top-title">如需了解更多，请进入 <br> <a href="http://h5.gc-app.com/91cnki">http://h5.gc-app.com/91cnki</a></h3>
-        <div class="list">
-          <p class="top-title-list">请选择检测种类：</p>
-          <ul>
-            <li v-for="(item,index) in list" :key="index"  class="tab-li">
-                <div class="top-box">
-                  <!-- <em class="img-box"  :style="{'background': 'url('+item.imgUrl+') no-repeat'}"></em> -->
-                  <img class="img-box" :src="item.imgUrl" alt="">
-                  <p>{{item.title}}</p>
-                </div>
-                <div class="bottom-box">
-                  <p>{{item.introduction}}</p>
-                </div>
-            </li>
-          </ul>
+      <h3 class="top-title">如需了解更多，请进入 <br> <a href="http://h5.gc-app.com/91cnki">http://h5.gc-app.com/91cnki</a></h3>
+      <div class="list">
+        <p class="top-title-list">请选择检测种类：</p>
+        <ul>
+          <li v-for="(item,index) in list" :key="index" class="tab-li" @click="selectItem(item)">
+            <div class="top-box">
+              <!-- <em class="img-box"  :style="{'background': 'url('+item.imgUrl+') no-repeat'}"></em> -->
+              <img class="img-box" :src="item.imgUrl" alt="">
+              <p>{{item.title}}</p>
+            </div>
+            <div class="bottom-box">
+              <p>{{item.introduction}}</p>
+            </div>
+          </li>
+        </ul>
+        <div class="introduce">
+          <div class="introduce-top">
+            <p>{{title+' '}}系统介绍：</p>
+            <p>￥{{price}}</p>
+          </div>
+          <div class="introduce-content">
+            <p>系统限制检测字符数：</p>
+            <p>5万字符以内</p>
+            <br>
+            <p>系统主要适用范围：</p>
+            <p>专科、本科毕业论文定稿，与学校结果一致。</p>
+            <br>
+            <p>论文检测文献库范围：</p>
+            <p>◆ 中国学术期刊网络出版总库</p>
+            <p>◆ 中国优秀硕士学位论文全文数据库</p>
+            <p>◆ 中国重要会议论文数据库</p>
+            <p>◆ 更多请点击底部官网查看详情</p>
+          </div>
         </div>
+        <a :href="hrefUrl" class="href-btn">立即检测</a>
+      </div>
     </div>
   </template>
 
