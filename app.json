@@ -1,0 +1,11 @@
+{
+  "window": {
+    "enableLargeWindow": true,
+    "showRefreshButton": true,
+    "windowWidth": 1138,
+    "windowHeight": 640,
+    "minWindowWidth": 400,
+    "minWindowHeight": 400,
+    "enableResize": true
+  }
+}

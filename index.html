@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360小程序</title>
+  <link rel="stylesheet" href="assets/css/iview.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <router-view></router-view>
+  </div>
+  <template id="tpl-home">
+    <div class="home-index">
+        <h3 class="top-title">如需了解更多，请进入 <br> <a href="http://h5.gc-app.com/91cnki">http://h5.gc-app.com/91cnki</a></h3>
+        <div class="list">
+          <p class="top-title-list">请选择检测种类：</p>
+          <ul>
+            <li v-for="(item,index) in list" :key="index"  class="tab-li">
+                <div class="top-box">
+                  <!-- <em class="img-box"  :style="{'background': 'url('+item.imgUrl+') no-repeat'}"></em> -->
+                  <img class="img-box" :src="item.imgUrl" alt="">
+                  <p>{{item.title}}</p>
+                </div>
+                <div class="bottom-box">
+                  <p>{{item.introduction}}</p>
+                </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </template>
+
+
+
+  <template id="tpl-index">
+    <div class="container">
+      <div class="logo" :class="hasUserInfo ? 'has-userinfo':''">
+        <h1><em class="logo-img"></em></em><span>360小程序</span></h1>
+      </div>
+      <div class="userinfo" :class="hasUserInfo ? 'has-userinfo':''">
+        <button v-if="!hasUserInfo" @click="getUserInfo">获取头像和昵称</button>
+        <div v-if="hasUserInfo">
+          <p><img :src="userInfo.head_icon" class="userinfo-avatar"></p>
+          <p class="nickname">{{userInfo.nickname}}</p>
+        </div>
+      </div>
+      <router-link class="more" to="/intro">更多介绍</router-link>
+    </div>
+  </template>
+
+  <template id="tpl-intro">
+    <div class="intro">
+      <h3>更多介绍</h3>
+      <p>360小程序支持在侧边栏小窗口和独立大窗口之间切换。</p>
+      <p>如果您的小程序每个页面都能适配大小窗口，请在app.json下将 enableLargeWindow 设置为true。</p>
+      <p>如果您的小程序只有单个页面需要支持大窗口。可通过调用 qihoo.SetScreenState() 进行大小窗口切换。</p>
+      <p>调用 qihoo.SetScreenState(true,
+        false)，将当前侧边栏小窗口切换为大窗口，该页面只支持大窗口样式，不显示大小窗口切换按钮。在大窗口点击返回按钮时，回到上一级页面，如果需要切换回小窗口，请在上一级页面加载时调用
+        qihoo.SetScreenState(false,
+        false)。</p>
+      <p>调用 qihoo.SetScreenState(true, true)，将当前侧边栏小窗口切换为大窗口，该页面需要同时适配大小窗口，显示大小窗口切换按钮，点击按钮时在大小窗口之间相互切换。</p>
+    </div>
+  </template>
+
+  <script src="assets/js/vue/vue.min.js"></script>
+  <script src="assets/js/vue/vuex.min.js"></script>
+  <script src="assets/js/vue/vue-router.min.js"></script>
+  <script src="assets/js/vue/iview.js"></script>
+
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
