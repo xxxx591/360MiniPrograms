@@ -21,7 +21,6 @@
   color: #fff;
 }
 
-.list {}
 
 .list .top-title-list {
   background-image: var(--gradualBlue);
@@ -36,6 +35,7 @@
   display: table;
   flex-wrap: wrap;
   padding: 10px;
+  width: 100%;
 }
 
 .tab-li {
@@ -110,6 +110,7 @@
   position: relative;
   background-image: var(--gradualBlue);
   color: var(--white);
+  margin-bottom: 75px;
 }
 .href-btn:hover{
   color: var(--white)

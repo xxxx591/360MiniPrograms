@@ -18,48 +18,48 @@ const Home = Vue.extend({
         {
           imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
           title: '本科PMLC',
-          price: '100',
+          price: '140.00',
           introduction: "专科、本科毕业论文定稿",
           href: "http://h5.gc-app.com/91cnki/check/pmlc.html"
         },
         {
           imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
           title: '硕博VIP5.1',
-          price: '101',
+          price: '280.00',
           introduction: "硕士、博士毕业论文定稿",
           href:"http://h5.gc-app.com/91cnki/check/vip.html"
         },
         {
           imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
           title: '期刊AMLC',
-          price: '102',
+          price: '24.00',
           introduction: "发表期刊查重初稿",
           href:"http://h5.gc-app.com/91cnki/check/qikan.html"
         },
         {
           imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
           title: '大分解',
-          price: '103',
+          price: '68.00',
           introduction: "发表论文查重初稿",
           href:"http://h5.gc-app.com/91cnki/check/dafenjie.html"
         },
         {
           imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
           title: '小分解',
-          price: '104',
+          price: '24.00',
           introduction: "高校毕业论文初查必备",
           href:"http://h5.gc-app.com/91cnki/check/xiaofenjie.html"
         },
         {
           imgUrl: 'http://h5.gc-app.com/91cnki/images/chachong.png',
           title: '查看更多',
-          price: '666',
+          price: '免费',
           introduction: "查询更多品牌点这里(#^.^#)",
           href:"http://h5.gc-app.com/91cnki"
         },
       ],
       hrefUrl:'',
-      price:'100',
+      price:'140.00',
       title:'本科PMLC'
     }
   },
